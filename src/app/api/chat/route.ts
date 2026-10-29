@@ -331,7 +331,7 @@ ${COLOR_INSTRUCTION}
       if (useMusicControl) finalSystemPrompt += buildMusicMenu();
 
       console.log("====== SYSTEM PROMPT SNAPSHOT ======");
-      console.log(finalSystemPrompt);
+      console.log("[Shiorivia Cloud] System prompt prepared (contents not logged)");
       console.log("==================================");
 
       const MAX_HISTORY = 6;
@@ -536,7 +536,7 @@ Make the chat natural, highly immersive, and lively.
       }
 
       console.log("====== SYSTEM PROMPT SNAPSHOT ======");
-      console.log(finalSystemPrompt);
+      console.log("[Shiorivia Cloud] System prompt prepared (contents not logged)");
       console.log("==================================");
 
       const ENGINEERING_WINDOW = 8;
@@ -627,7 +627,7 @@ Make the chat natural, highly immersive, and lively.
       finalSystemPrompt += `\n[SYSTEM WARNING]: Do NOT copy/paste previous [GALLERY] tags.`;
 
       console.log("====== SYSTEM PROMPT SNAPSHOT ======");
-      console.log(finalSystemPrompt);
+      console.log("[Shiorivia Cloud] System prompt prepared (contents not logged)");
       console.log("==================================");
 
       const WINDOW_SIZE = 4;

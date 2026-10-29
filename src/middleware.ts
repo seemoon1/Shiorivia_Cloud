@@ -14,6 +14,12 @@ function isPublicPath(pathname: string) {
 }
 
 export async function middleware(request: NextRequest) {
+  // Phase 0: deny legacy server-file/code endpoints even if site lock is disabled.
+  const blockedRoutes = new Set(["/api/run", "/api/local/sync", "/api/local/slots", "/api/local/slots/read", "/api/upload"]);
+  if (blockedRoutes.has(request.nextUrl.pathname)) {
+    const status = request.nextUrl.pathname === "/api/run" ? 403 : 410;
+    return NextResponse.json({ error: "Disabled in Shiorivia Cloud (Phase 0)" }, { status });
+  }
   if (process.env.SITE_LOCK_ENABLED !== "true") {
     return NextResponse.next();
   }

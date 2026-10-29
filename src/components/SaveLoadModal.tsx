@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Save, Download, Trash2, X, Camera, HardDrive, Loader2 } from "lucide-react";
 import { toJpeg } from 'html-to-image';
+import { browserSlotRequest } from '../lib/browserSlotApi';
 
 export const SaveLoadModal = ({ isOpen, onClose, currentSession, onLoadSession }: any) => {
     const [slots, setSlots] = useState<Record<number, any>>({});
@@ -12,7 +13,7 @@ export const SaveLoadModal = ({ isOpen, onClose, currentSession, onLoadSession }
     const fetchSlots = async () => {
         setIsLoading(true);
         try {
-            const res = await fetch("/api/local/slots");
+            const res = await browserSlotRequest("/api/local/slots");
             const data = await res.json();
             
             const map: Record<number, any> = {};
@@ -73,7 +74,7 @@ export const SaveLoadModal = ({ isOpen, onClose, currentSession, onLoadSession }
         if (lastMsg) preview = typeof lastMsg.content === 'string' ? lastMsg.content.slice(0, 30) + "..." : "[Image]";
 
         try {
-            const res = await fetch("/api/local/slots", {
+            const res = await browserSlotRequest("/api/local/slots", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -102,7 +103,7 @@ export const SaveLoadModal = ({ isOpen, onClose, currentSession, onLoadSession }
         
         setIsLoading(true);
         try {
-            const res = await fetch("/api/local/slots/read", {
+            const res = await browserSlotRequest("/api/local/slots/read", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ slotIndex: index })
@@ -124,7 +125,7 @@ export const SaveLoadModal = ({ isOpen, onClose, currentSession, onLoadSession }
         e.stopPropagation();
         if (!confirm("永久删除此存档？")) return;
         setIsLoading(true);
-        await fetch("/api/local/slots", {
+        await browserSlotRequest("/api/local/slots", {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ slotIndex: index })

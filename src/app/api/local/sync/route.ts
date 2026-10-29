@@ -12,6 +12,7 @@ const ensureDir = () => {
 };
 
 export async function GET() {
+  return NextResponse.json({ error: "Legacy server-file storage is disabled in Shiorivia Cloud." }, { status: 410 });
     try {
         ensureDir();
         if (fs.existsSync(MAIN_FILE)) {
@@ -29,6 +30,7 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
+  return NextResponse.json({ error: "Legacy server-file storage is disabled in Shiorivia Cloud." }, { status: 410 });
     try {
         ensureDir();
         const { data } = await req.json();

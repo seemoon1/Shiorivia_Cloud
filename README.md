@@ -1,5 +1,5 @@
 ---
-title: Mutsu Studio Cloud
+title: Shiorivia Cloud
 emoji: 🥒
 colorFrom: green
 colorTo: indigo
@@ -14,7 +14,7 @@ license: agpl-3.0
 short_description: A Serverless, Privacy-First AI Visual Novel Engine. (BYOK)
 ---
 
-# 🥒 Mutsu Studio Cloud (Live Demo)
+# Shiorivia Cloud — BYOK Preview (formerly Mutsu Studio Cloud)
 
 <div align="center">
 
@@ -37,7 +37,7 @@ short_description: A Serverless, Privacy-First AI Visual Novel Engine. (BYOK)
 > ☁️ **Cloud Version**: No installation required. Runs in your browser. Data saved in `localStorage`.  
 > 📦 **Full Local Version**: Supports custom Live2D models, local BGM, unlimited storage, and offline mode.  
 > **Want the full experience? / 想要加载自定义角色和本地音乐？**  
-> 👉 [**Download Mutsu Studio Lite (Local Edition)**](https://github.com/seemoon1/mutsu-studio-lite) 
+> 👉 [**Shiorivia Local Edition**](https://github.com/seemoon1/Shiorivia)
 
 ---
 
@@ -47,7 +47,7 @@ short_description: A Serverless, Privacy-First AI Visual Novel Engine. (BYOK)
 Mutsu Studio Cloud is a lightweight AI chat interface running entirely in your browser. It acts as a secure bridge to AI models like **DeepSeek**, **Google Gemini**, and **OpenRouter**.
 
 *   **Zero Install**: Just open the webpage.
-*   **Privacy First**: Your API Keys and chat history are stored in your browser's **Local Storage**. We do not (and cannot) see your data.
+*   **BYOK / privacy boundary**: API keys and chat history may be stored in your browser's `localStorage`. Keys and relevant prompts are sent to this site's server-side proxy for provider requests. The server operator/hosting provider may technically access request data; use only providers and deployments you trust. See [SECURITY.md](SECURITY.md).
 *   **Visual Novel Mode**: Write immersive stories with auto-generated illustrations (requires Volcengine/Fal keys).
 
 ### 🔑 How to Use (Bring Your Own Key)
@@ -73,7 +73,7 @@ To use this app, you need an API Key from an AI provider.
 Mutsu Studio Cloud 是一个纯前端的 AI 聊天/小说生成器。它不需要你购买昂贵的显卡，也不需要复杂的本地部署，打开网页即可直接连接最强大的 AI 模型。
 
 *   **⚡ 秒开秒玩**: 没有 Python 环境，没有报错。
-*   **🔒 隐私安全**: 所有的聊天记录和 API 密钥都只保存在你**自己的浏览器缓存**里。服务器只做转发，不存任何数据。
+*   **🔒 BYOK 隐私边界**：密钥与聊天记录可保存在浏览器 `localStorage`，但调用模型时密钥及相关对话会经过本站服务端代理。站长、托管平台及模型提供商均属于不同信任边界；参见 [SECURITY.md](SECURITY.md)。
 *   **💸 丰俭由人**: 支持超便宜的国产之光 **DeepSeek-V3**，也支持免费的 **Google Gemini**。
 
 ### 🔑 如何开始 (三步走)
@@ -115,7 +115,9 @@ Copyright (c) 2026 Tsuki (seemoon1).
 
 Licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
 
-**Commercial use is strictly prohibited.** / **严禁商用。**
+Commercial use of AGPL-licensed **code** is permitted under the license; commercial use of Shiorivia **official branding** requires separate permission. See [TRADEMARKS.md](TRADEMARKS.md).
+遵守 AGPL-3.0 即可依法商用**源码**；使用 Shiorivia **官方品牌标识**进行商业活动须另行取得许可，详见 [品牌政策](TRADEMARKS.md)。
+See also [BRANDING.md](BRANDING.md) and [SECURITY.md](SECURITY.md).
 
 ---
 

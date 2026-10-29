@@ -1,5 +1,6 @@
 // src/app/api/video/route.ts
 import { NextResponse } from "next/server";
+import { isAllowedFalQueueUrl } from "../../../lib/falQueueUrl";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -122,6 +123,9 @@ export async function GET(req: Request) {
           { status: 400 },
         );
 
+      if (!/^[A-Za-z0-9_-]{1,128}$/.test(taskId || "")) {
+        return NextResponse.json({ error: "Invalid task ID" }, { status: 400 });
+      }
       const checkUrl = `https://ark.cn-beijing.volces.com/api/v3/content_generation/tasks/${taskId}`;
 
       const res = await fetch(checkUrl, {
@@ -166,8 +170,12 @@ export async function GET(req: Request) {
         { status: 401 },
       );
 
+    if (!isAllowedFalQueueUrl(statusUrl) || (responseUrl && !isAllowedFalQueueUrl(responseUrl))) {
+      return NextResponse.json({ error: "Invalid fal.ai queue URL" }, { status: 400 });
+    }
     const res = await fetch(statusUrl, {
       headers: { Authorization: `Key ${FINAL_FAL_KEY}` },
+      redirect: "error",
     });
 
     if (!res.ok) throw new Error(`Status Fetch Error: ${await res.text()}`);
@@ -181,6 +189,7 @@ export async function GET(req: Request) {
       if (responseUrl) {
         const resultRes = await fetch(responseUrl, {
           headers: { Authorization: `Key ${FINAL_FAL_KEY}` },
+          redirect: "error",
         });
         const resultData = await resultRes.json();
         videoUrl = resultData.video?.url || resultData.url;

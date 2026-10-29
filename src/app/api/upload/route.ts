@@ -4,6 +4,7 @@ import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(req: Request) {
+  return NextResponse.json({ error: "Legacy server-file storage is disabled in Shiorivia Cloud." }, { status: 410 });
   try {
     const { base64 } = await req.json();
     

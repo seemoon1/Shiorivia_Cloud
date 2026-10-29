@@ -11,6 +11,7 @@ const ensureDirs = () => {
 };
 
 export async function GET() {
+  return NextResponse.json({ error: "Legacy server-file storage is disabled in Shiorivia Cloud." }, { status: 410 });
     try {
         ensureDirs();
         const files = fs.readdirSync(SLOT_DIR).filter(f => f.startsWith('slot_') && f.endsWith('.json'));
@@ -28,6 +29,7 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
+  return NextResponse.json({ error: "Legacy server-file storage is disabled in Shiorivia Cloud." }, { status: 410 });
     try {
         ensureDirs();
         const { slotIndex, session, meta, thumbnailBase64 } = await req.json();
@@ -62,6 +64,7 @@ export async function POST(req: Request) {
 }
 
 export async function DELETE(req: Request) {
+  return NextResponse.json({ error: "Legacy server-file storage is disabled in Shiorivia Cloud." }, { status: 410 });
     try {
         const { slotIndex } = await req.json();
         const jsonPath = path.join(SLOT_DIR, `slot_${slotIndex}.json`);

@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 export async function POST(req: Request) {
+  return NextResponse.json({ error: "Legacy server-file storage is disabled in Shiorivia Cloud." }, { status: 410 });
     try {
         const { slotIndex } = await req.json();
         const filePath = path.join(process.cwd(), 'data_storage', 'slots', `slot_${slotIndex}.json`);

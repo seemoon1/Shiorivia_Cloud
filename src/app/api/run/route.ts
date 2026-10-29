@@ -9,6 +9,7 @@ const writeFilePromise = promisify(fs.writeFile);
 const unlinkPromise = promisify(fs.unlink);
 
 export async function POST(req: Request) {
+  return NextResponse.json({ error: "Remote code execution is disabled in Shiorivia Cloud." }, { status: 403 });
   try {
     const { code, language } = await req.json();
 
