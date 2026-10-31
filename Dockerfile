@@ -1,12 +1,12 @@
-# 使用轻量级的 Node.js 18 环境
-FROM node:18-alpine
+# Node.js LTS for Next.js 16
+FROM node:24-alpine
 
 # 设置工作目录
 WORKDIR /app
 
 # 复制依赖配置并安装
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
 # 复制所有源代码
 COPY . .

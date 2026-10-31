@@ -13,7 +13,7 @@ function isPublicPath(pathname: string) {
   return PUBLIC_PATHS.has(pathname) || pathname.startsWith("/_next/");
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   // Phase 0: deny legacy server-file/code endpoints even if site lock is disabled.
   const blockedRoutes = new Set(["/api/run", "/api/local/sync", "/api/local/slots", "/api/local/slots/read", "/api/upload"]);
   if (blockedRoutes.has(request.nextUrl.pathname)) {
