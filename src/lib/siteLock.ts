@@ -1,6 +1,6 @@
-export const SITE_LOCK_COOKIE = "mutsu_site_unlock";
+export const SITE_LOCK_COOKIE = "shiorivia_site_unlock";
 
-const TOKEN_CONTEXT = "mutsu-site-lock:v1:";
+const TOKEN_CONTEXT = "shiorivia-site-lock:v1:";
 
 function bytesToHex(bytes: Uint8Array) {
   return Array.from(bytes)

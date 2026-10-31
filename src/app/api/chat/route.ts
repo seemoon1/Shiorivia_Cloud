@@ -839,8 +839,8 @@ Make the chat natural, highly immersive, and lively.
         apiKey: apiKey,
         baseURL: "https://openrouter.ai/api/v1",
         defaultHeaders: {
-          "HTTP-Referer": "https://mutsu-studio.vercel.app",
-          "X-Title": "Mutsu Studio Cloud",
+          "HTTP-Referer": "https://shiorivia.com",
+          "X-Title": "Shiorivia Cloud",
         },
       });
 

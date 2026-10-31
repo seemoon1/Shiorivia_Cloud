@@ -44,13 +44,13 @@ export default function LockedPage() {
       <section className="relative w-full max-w-md rounded-2xl border border-white/10 bg-zinc-950/75 p-8 shadow-2xl backdrop-blur-xl">
         <div className="mb-8">
           <div className="mb-3 text-[10px] font-mono uppercase tracking-[0.35em] text-zinc-500">
-            Mutsu Studio // Archive Mode
+            Shiorivia Cloud // Access Restricted
           </div>
           <h1 className="text-2xl font-semibold tracking-tight">
             项目暂时封存
           </h1>
           <p className="mt-3 text-sm leading-6 text-zinc-400">
-            Mutsu Studio Cloud 当前已暂停公开访问。
+            Shiorivia Cloud 当前暂停公开访问。
             <br />
             如需进入，请输入访问密码。
           </p>

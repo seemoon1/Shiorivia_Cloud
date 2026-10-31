@@ -35,7 +35,7 @@ export async function middleware(request: NextRequest) {
   if (!password || !secret) {
     if (pathname.startsWith("/api/")) {
       return NextResponse.json(
-        { error: "Mutsu Studio is sealed and the site lock is not configured." },
+        { error: "Shiorivia Cloud is locked and the site lock is not configured." },
         { status: 503 },
       );
     }
@@ -54,7 +54,7 @@ export async function middleware(request: NextRequest) {
   }
 
   if (pathname.startsWith("/api/")) {
-    return NextResponse.json({ error: "Mutsu Studio is sealed." }, { status: 401 });
+    return NextResponse.json({ error: "Shiorivia Cloud is locked." }, { status: 401 });
   }
 
   const lockedUrl = request.nextUrl.clone();

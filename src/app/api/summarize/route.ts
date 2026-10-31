@@ -34,7 +34,7 @@ export async function POST(req: Request) {
         const client = new OpenAI({ 
             apiKey: OR_KEY, 
             baseURL: "https://openrouter.ai/api/v1",
-            defaultHeaders: { "HTTP-Referer": "https://mutsu.cloud", "X-Title": "Mutsu Summarizer" }
+            defaultHeaders: { "HTTP-Referer": "https://shiorivia.com", "X-Title": "Shiorivia Cloud Summarizer" }
         });
         const response = await client.chat.completions.create({
             model: "deepseek/deepseek-v3.2",

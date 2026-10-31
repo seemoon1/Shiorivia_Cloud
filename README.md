@@ -1,7 +1,7 @@
 ---
 title: Shiorivia Cloud
-emoji: 🥒
-colorFrom: green
+emoji: 🌌
+colorFrom: blue
 colorTo: indigo
 sdk: docker
 pinned: false
@@ -14,7 +14,9 @@ license: agpl-3.0
 short_description: A Serverless, Privacy-First AI Visual Novel Engine. (BYOK)
 ---
 
-# Shiorivia Cloud — BYOK Preview (formerly Mutsu Studio Cloud)
+# Shiorivia Cloud — BYOK Preview
+
+![Shiorivia Star Road](public/branding/shiorivia-banner.svg)
 
 <div align="center">
 
@@ -22,7 +24,7 @@ short_description: A Serverless, Privacy-First AI Visual Novel Engine. (BYOK)
 **无需部署、打开即用的沉浸式 AI 互动前端。**
 
 [![License](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](LICENSE)
-[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/SeeMoon1/Mutsu-Studio-Cloud)
+![Cloud Edition](https://img.shields.io/badge/Edition-BYOK%20Cloud-blue)
 ![DeepSeek](https://img.shields.io/badge/Support-DeepSeek%20V3-blue)
 ![Vercel](https://img.shields.io/badge/Deploy-Vercel-black)
 
@@ -44,7 +46,7 @@ short_description: A Serverless, Privacy-First AI Visual Novel Engine. (BYOK)
 ## <a id="english"></a>🇬🇧 English
 
 ### ✨ What is this?
-Mutsu Studio Cloud is a lightweight AI chat interface running entirely in your browser. It acts as a secure bridge to AI models like **DeepSeek**, **Google Gemini**, and **OpenRouter**.
+Shiorivia Cloud is a lightweight browser-based AI chat interface. Your browser connects to the Shiorivia Cloud backend, which forwards BYOK requests to AI providers such as **DeepSeek**, **Google Gemini**, and **OpenRouter**.
 
 *   **Zero Install**: Just open the webpage.
 *   **BYOK / privacy boundary**: API keys and chat history may be stored in your browser's `localStorage`. Keys and relevant prompts are sent to this site's server-side proxy for provider requests. The server operator/hosting provider may technically access request data; use only providers and deployments you trust. See [SECURITY.md](SECURITY.md).
@@ -70,7 +72,7 @@ To use this app, you need an API Key from an AI provider.
 ## <a id="中文说明"></a>🇨🇳 中文说明
 
 ### ✨ 这是什么？
-Mutsu Studio Cloud 是一个纯前端的 AI 聊天/小说生成器。它不需要你购买昂贵的显卡，也不需要复杂的本地部署，打开网页即可直接连接最强大的 AI 模型。
+Shiorivia Cloud 是一个浏览器即开的 AI 聊天与小说交互前端。它通过 Cloud 服务端代理请求模型提供商，无需在本地部署推理环境。
 
 *   **⚡ 秒开秒玩**: 没有 Python 环境，没有报错。
 *   **🔒 BYOK 隐私边界**：密钥与聊天记录可保存在浏览器 `localStorage`，但调用模型时密钥及相关对话会经过本站服务端代理。站长、托管平台及模型提供商均属于不同信任边界；参见 [SECURITY.md](SECURITY.md)。

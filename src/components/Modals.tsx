@@ -69,34 +69,34 @@ export const ApiKeysModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: ()
     useEffect(() => {
         if (isOpen) {
             setKeys({
-                deepseek: localStorage.getItem("mutsu_key_deepseek") || "",
-                openrouter: localStorage.getItem("mutsu_key_openrouter") || "",
-                google: localStorage.getItem("mutsu_key_google") || "",
-                siliconflow: localStorage.getItem("mutsu_key_siliconflow") || "",
-                tavily: localStorage.getItem("mutsu_key_tavily") || "",
-                volcengine: localStorage.getItem("mutsu_key_volcengine") || "",
-                volc_ep_image: localStorage.getItem("mutsu_key_volc_ep_image") || "",
-                volc_ep_video: localStorage.getItem("mutsu_key_volc_ep_video") || "",
-                volc_ep_chat: localStorage.getItem("mutsu_key_volc_ep_chat") || "",
-                fal: localStorage.getItem("mutsu_key_fal") || "",
-                accessCode: localStorage.getItem("mutsu_access_code") || ""
+                deepseek: localStorage.getItem("shiorivia_key_deepseek") || "",
+                openrouter: localStorage.getItem("shiorivia_key_openrouter") || "",
+                google: localStorage.getItem("shiorivia_key_google") || "",
+                siliconflow: localStorage.getItem("shiorivia_key_siliconflow") || "",
+                tavily: localStorage.getItem("shiorivia_key_tavily") || "",
+                volcengine: localStorage.getItem("shiorivia_key_volcengine") || "",
+                volc_ep_image: localStorage.getItem("shiorivia_key_volc_ep_image") || "",
+                volc_ep_video: localStorage.getItem("shiorivia_key_volc_ep_video") || "",
+                volc_ep_chat: localStorage.getItem("shiorivia_key_volc_ep_chat") || "",
+                fal: localStorage.getItem("shiorivia_key_fal") || "",
+                accessCode: localStorage.getItem("shiorivia_access_code") || ""
             });
         }
     }, [isOpen]);
 
     const handleSave = () => {
-        localStorage.setItem("mutsu_key_deepseek", keys.deepseek);
-        localStorage.setItem("mutsu_key_openrouter", keys.openrouter);
-        localStorage.setItem("mutsu_key_google", keys.google);
-        localStorage.setItem("mutsu_key_siliconflow", keys.siliconflow);
-        localStorage.setItem("mutsu_key_tavily", keys.tavily);
-        localStorage.setItem("mutsu_key_volcengine", keys.volcengine);
-        localStorage.setItem("mutsu_key_volc_ep_image", keys.volc_ep_image);
-        localStorage.setItem("mutsu_key_volc_ep_video", keys.volc_ep_video);
-        localStorage.setItem("mutsu_key_volc_ep_chat", keys.volc_ep_chat);
-        localStorage.setItem("mutsu_key_fal", keys.fal);
-        localStorage.setItem("mutsu_access_code", keys.accessCode);
-        alert("🔑 密钥已加密保存在您的浏览器本地！");
+        localStorage.setItem("shiorivia_key_deepseek", keys.deepseek);
+        localStorage.setItem("shiorivia_key_openrouter", keys.openrouter);
+        localStorage.setItem("shiorivia_key_google", keys.google);
+        localStorage.setItem("shiorivia_key_siliconflow", keys.siliconflow);
+        localStorage.setItem("shiorivia_key_tavily", keys.tavily);
+        localStorage.setItem("shiorivia_key_volcengine", keys.volcengine);
+        localStorage.setItem("shiorivia_key_volc_ep_image", keys.volc_ep_image);
+        localStorage.setItem("shiorivia_key_volc_ep_video", keys.volc_ep_video);
+        localStorage.setItem("shiorivia_key_volc_ep_chat", keys.volc_ep_chat);
+        localStorage.setItem("shiorivia_key_fal", keys.fal);
+        localStorage.setItem("shiorivia_access_code", keys.accessCode);
+        alert("🔑 密钥已保存在此浏览器中（非加密存储），请妥善保护浏览器环境。");
         onClose();
     };
 
@@ -207,7 +207,7 @@ export const ImageViewerModal = ({ url, onClose }: { url: string | null, onClose
             const blobUrl = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = blobUrl;
-            a.download = `mutsu_visual_${Date.now()}.png`;
+            a.download = `shiorivia_visual_${Date.now()}.png`;
             document.body.appendChild(a);
             a.click();
             a.remove();

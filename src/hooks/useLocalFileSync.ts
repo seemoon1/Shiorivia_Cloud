@@ -12,7 +12,7 @@ export const useLocalFileSync = (isGlobalGenerating: boolean, showToast: (msg: s
 
     useEffect(() => {
         try {
-            const localData = localStorage.getItem("mutsu_cloud_storage");
+            const localData = localStorage.getItem("shiorivia_cloud_storage");
             if (localData) {
                 const parsed = JSON.parse(localData);
                 setSessions(parsed.sessions || []);
@@ -34,7 +34,7 @@ export const useLocalFileSync = (isGlobalGenerating: boolean, showToast: (msg: s
         const timer = setTimeout(() => {
             try {
                 const payload = { sessions, folders, globalWorldInfo, bgImage };
-                localStorage.setItem("mutsu_cloud_storage", JSON.stringify(payload));
+                localStorage.setItem("shiorivia_cloud_storage", JSON.stringify(payload));
             } catch (e) {
                 console.error("存储空间不足", e);
                 showToast("❌ 浏览器存储已满！请立刻导出 JSON 备份！");
