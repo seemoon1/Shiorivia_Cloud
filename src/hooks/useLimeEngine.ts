@@ -135,11 +135,13 @@ export const useLimeEngine = ({
 
           provider: apiProvider,
           localKeys: {
-            deepseek: localStorage.getItem("mutsu_key_deepseek") || "",
-            openrouter: localStorage.getItem("mutsu_key_openrouter") || "",
-            google: localStorage.getItem("mutsu_key_google") || "",
-            volcengine: localStorage.getItem("mutsu_key_volcengine") || "",
-            volc_ep_chat: localStorage.getItem("mutsu_key_volc_ep_chat") || "",
+            deepseek: localStorage.getItem("shiorivia_key_deepseek") || "",
+            openrouter: localStorage.getItem("shiorivia_key_openrouter") || "",
+            google: localStorage.getItem("shiorivia_key_google") || "",
+            siliconflow: localStorage.getItem("shiorivia_key_siliconflow") || "",
+            volcengine: localStorage.getItem("shiorivia_key_volcengine") || "",
+            volc_ep_chat: localStorage.getItem("shiorivia_key_volc_ep_chat") || "",
+            accessCode: localStorage.getItem("shiorivia_access_code") || "",
           },
         }),
         signal: abortControllerRef.current.signal,
@@ -198,11 +200,11 @@ export const useLimeEngine = ({
           text: textToSummarize,
           mode: "micro",
           localKeys: {
-            deepseek: localStorage.getItem("mutsu_key_deepseek") || "",
-            openrouter: localStorage.getItem("mutsu_key_openrouter") || "",
-            google: localStorage.getItem("mutsu_key_google") || "",
-            volcengine: localStorage.getItem("mutsu_key_volcengine") || "",
-            volc_ep_chat: localStorage.getItem("mutsu_key_volc_ep_chat") || "",
+            deepseek: localStorage.getItem("shiorivia_key_deepseek") || "",
+            openrouter: localStorage.getItem("shiorivia_key_openrouter") || "",
+            google: localStorage.getItem("shiorivia_key_google") || "",
+            volcengine: localStorage.getItem("shiorivia_key_volcengine") || "",
+            volc_ep_chat: localStorage.getItem("shiorivia_key_volc_ep_chat") || "",
           },
         }),
       })
@@ -235,14 +237,14 @@ export const useLimeEngine = ({
                       mode: "macro",
                       localKeys: {
                         deepseek:
-                          localStorage.getItem("mutsu_key_deepseek") || "",
+                          localStorage.getItem("shiorivia_key_deepseek") || "",
                         openrouter:
-                          localStorage.getItem("mutsu_key_openrouter") || "",
-                        google: localStorage.getItem("mutsu_key_google") || "",
+                          localStorage.getItem("shiorivia_key_openrouter") || "",
+                        google: localStorage.getItem("shiorivia_key_google") || "",
                         volcengine:
-                          localStorage.getItem("mutsu_key_volcengine") || "",
+                          localStorage.getItem("shiorivia_key_volcengine") || "",
                         volc_ep_chat:
-                          localStorage.getItem("mutsu_key_volc_ep_chat") || "",
+                          localStorage.getItem("shiorivia_key_volc_ep_chat") || "",
                       },
                     }),
                   })
