@@ -20,7 +20,7 @@ short_description: A Serverless, Privacy-First AI Visual Novel Engine. (BYOK)
 
 <div align="center">
 
-**A Serverless, Zero-Config AI Visual Novel Interface.**  
+**A Browser-First, Bring-Your-Own-Key AI Story Interface.**
 **无需部署、打开即用的沉浸式 AI 互动前端。**
 
 [![License](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](LICENSE)

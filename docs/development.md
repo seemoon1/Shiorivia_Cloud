@@ -1,0 +1,33 @@
+# Cloud Edition development / 云端版开发
+
+## Prerequisites / 环境
+
+- Git; Node.js and npm (currently Next.js 14.1.0).
+- Provider API keys only when testing real BYOK model requests. Never add production keys to the repository.
+
+## Run locally / 本地启动
+
+```powershell
+cd E:\Projects\Shiorivia_Cloud  # Replace with your own checkout path
+npm ci
+npm run dev
+```
+
+Open `http://localhost:3000`. Use a local `.env.local` only for values you deliberately need; never commit credentials or paste them into Issues.
+
+## Preview and production / 预览与正式版
+
+- The public Cloud entry point is `https://app.shiorivia.com` (production).
+- The `main` branch deploys to production; `dev` is the preview branch. Preview links and access settings belong to the project's Vercel configuration.
+- A Vercel URL that looks accessible is **not** proof the preview is private. Check Deployment Protection before sharing previews.
+- Browser `localStorage` holds BYOK keys and chat history; it is **not encrypted**. Relevant key/prompt material also passes through the Cloud server proxy during provider requests. Read [SECURITY.md](../SECURITY.md).
+- The old server-side routes `/api/run`, `/api/upload`, `/api/local/sync`, and `/api/local/slots*` are disabled intentionally. Do not bring them back to enable features without a proper trust and storage design.
+
+## Verify / 验证
+
+```powershell
+npx tsc --noEmit
+npm run build
+```
+
+The legacy Next.js 14 build currently ignores some TypeScript/ESLint errors via `next.config.mjs`. Dependency upgrades, explicit checks, rate limits and a full security review are required before dropping preview protection or declaring the hosted demo production-hardened.
