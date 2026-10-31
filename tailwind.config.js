@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)"],
-        serif: ["var(--font-serif)"],
-        mono: ["var(--font-mono)"],
+        sans: ["Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", "Arial", "sans-serif"],
+        serif: ["Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", "Georgia", "serif"],
+        mono: ["JetBrains Mono", "Cascadia Code", "Consolas", "Courier New", "monospace"],
       },
       colors: {
         background: "var(--background)",

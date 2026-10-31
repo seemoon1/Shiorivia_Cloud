@@ -1,19 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Noto_Serif_SC, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script"; 
 import { MusicProvider } from "../context/MusicContext";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const serif = Noto_Serif_SC({ 
-  subsets: ["latin"], 
-  weight: ["400", "700"],
-  variable: "--font-serif" 
-});
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono"
-});
 
 export const metadata: Metadata = {
   title: "Shiorivia",
@@ -52,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
-      <body className={`${inter.variable} ${serif.variable} ${mono.variable} font-sans`}>
+      <body className="font-sans">
         <Script 
           src="/lib/live2d.min.js" 
           strategy="beforeInteractive" 
